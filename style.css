@@ -1,0 +1,416 @@
+/* ========================================
+   Maison de Luna — Corporate Site
+   Design: Monotone / High-end / Global
+   ======================================== */
+
+/* --- Reset & Base --- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: "Inter", "Noto Sans JP", sans-serif;
+  font-weight: 300;
+  color: #1a1a1a;
+  background: #fff;
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --- Scroll offset for fixed header --- */
+[id] {
+  scroll-margin-top: 72px;
+}
+
+/* --- Header --- */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.header__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__logo {
+  font-size: 1.125rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #000;
+}
+
+.header__nav {
+  display: flex;
+  gap: 32px;
+}
+
+.header__nav a {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #555;
+  transition: color 0.3s;
+}
+
+.header__nav a:hover {
+  color: #000;
+}
+
+/* --- Hero --- */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: #000;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 50%, rgba(255, 255, 255, 0.02) 0%, transparent 60%);
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 1;
+  padding: 0 32px;
+}
+
+.hero__sub {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 24px;
+}
+
+.hero__title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+
+.hero__lead {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* --- Section --- */
+.section {
+  padding: 120px 32px;
+}
+
+.section--dark {
+  background: #f5f5f5;
+}
+
+.section__inner {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.section__inner--narrow {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section__label {
+  display: block;
+  font-size: 0.6875rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 12px;
+}
+
+.section__heading {
+  font-size: 1.75rem;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  margin-bottom: 56px;
+}
+
+/* --- About Grid --- */
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+}
+
+.about-card {
+  padding: 0;
+}
+
+.about-card__num {
+  display: block;
+  font-size: 0.6875rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  color: #bbb;
+  margin-bottom: 16px;
+}
+
+.about-card__title {
+  font-size: 1.0625rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  margin-bottom: 12px;
+}
+
+.about-card__text {
+  font-size: 0.875rem;
+  line-height: 2;
+  color: #555;
+}
+
+/* --- Info Table --- */
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.info-table tr {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.info-table th,
+.info-table td {
+  padding: 20px 0;
+  font-size: 0.9375rem;
+  font-weight: 300;
+  text-align: left;
+  vertical-align: top;
+}
+
+.info-table th {
+  width: 160px;
+  color: #888;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+}
+
+.info-table td {
+  color: #1a1a1a;
+  line-height: 1.9;
+}
+
+.info-table__en {
+  font-size: 0.8125rem;
+  color: #888;
+}
+
+/* --- Contact --- */
+.contact-lead {
+  font-size: 0.9375rem;
+  color: #555;
+  line-height: 2;
+  margin-bottom: 32px;
+}
+
+.contact-email {
+  display: inline-block;
+  font-size: 1.125rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: #000;
+  padding: 16px 48px;
+  border: 1px solid #000;
+  transition: background 0.3s, color 0.3s;
+}
+
+.contact-email:hover {
+  background: #000;
+  color: #fff;
+}
+
+/* --- Footer --- */
+.footer {
+  background: #000;
+  color: #fff;
+  padding: 64px 32px;
+  text-align: center;
+}
+
+.footer__inner {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.footer__logo {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  margin-bottom: 24px;
+}
+
+.footer__nav {
+  margin-bottom: 32px;
+}
+
+.footer__nav a {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  transition: color 0.3s;
+}
+
+.footer__nav a:hover {
+  color: #fff;
+}
+
+.footer__copy {
+  font-size: 0.6875rem;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 0.06em;
+}
+
+/* --- Privacy Page --- */
+.section--privacy {
+  padding-top: 160px;
+}
+
+/* --- Privacy Policy --- */
+.privacy-body {
+  max-width: 720px;
+}
+
+.privacy-body p {
+  font-size: 0.9375rem;
+  color: #444;
+  line-height: 2;
+  margin-bottom: 20px;
+}
+
+.privacy-body h2 {
+  font-size: 1.0625rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: #1a1a1a;
+  margin-top: 40px;
+  margin-bottom: 12px;
+}
+
+.privacy-body ul {
+  margin: 0 0 20px 24px;
+  font-size: 0.9375rem;
+  color: #444;
+  line-height: 2;
+}
+
+.privacy-date {
+  margin-top: 56px;
+  font-size: 0.8125rem;
+  color: #888;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .header__inner {
+    padding: 0 20px;
+    height: 56px;
+  }
+
+  .header__nav {
+    gap: 20px;
+  }
+
+  .header__nav a {
+    font-size: 0.75rem;
+  }
+
+  .hero {
+    min-height: 80vh;
+  }
+
+  .section {
+    padding: 80px 20px;
+  }
+
+  .section__heading {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .info-table th {
+    display: block;
+    width: 100%;
+    padding-bottom: 4px;
+  }
+
+  .info-table td {
+    display: block;
+    padding-top: 0;
+    padding-bottom: 20px;
+  }
+
+  .contact-email {
+    font-size: 0.9375rem;
+    padding: 14px 32px;
+  }
+
+  .section--privacy {
+    padding-top: 100px;
+  }
+
+  .footer {
+    padding: 48px 20px;
+  }
+}
