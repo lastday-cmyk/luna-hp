@@ -24,3 +24,11 @@ Thumbs.db
 # Build artifacts (not applicable for static site, but for future reference)
 dist/
 build/
+
+# Test/backup assets (keep production assets only)
+assets/hero-bg-backup.mp4
+assets/hero-bg-test.mp4
+assets/hero-bg-test2.mp4
+assets/frame-check.jpg
+assets/frame-cropped.jpg
+assets/logo-original.png

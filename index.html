@@ -9,18 +9,25 @@
   <meta property="og:description" content="グローバルな視点と確かなネットワークで、国際貿易・輸出入ビジネスをサポートします。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://md-luna.com/">
-  <!-- og:image はロゴ完成後に追加 -->
+  <meta property="og:image" content="https://md-luna.com/assets/og-image-wide.webp">
+  <meta property="og:image:width" content="1344">
+  <meta property="og:image:height" content="768">
+  <link rel="icon" type="image/webp" href="assets/logo.png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Inter:wght@300;400&family=Noto+Serif+JP:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
   <!-- ===== Header ===== -->
   <header class="header">
     <div class="header__inner">
-      <a href="/" class="header__logo">Maison de Luna</a>
+      <a href="/" class="header__logo">
+        <img src="assets/logo.png" alt="Maison de Luna" class="header__logo-image">
+        <span class="header__logo-text">Maison de Luna</span>
+      </a>
       <nav class="header__nav" aria-label="Primary">
         <a href="#about">About</a>
         <a href="#company">Company</a>
@@ -31,6 +38,10 @@
 
   <!-- ===== Hero ===== -->
   <section class="hero">
+    <video class="hero__video" autoplay muted loop playsinline poster="assets/hero-bg.webp" aria-hidden="true">
+      <source src="assets/hero-bg.mp4" type="video/mp4">
+    </video>
+    <div class="hero__ornament" aria-hidden="true"></div>
     <div class="hero__inner">
       <p class="hero__sub">International Trade & Commerce</p>
       <h1 class="hero__title">Maison de Luna</h1>
@@ -41,21 +52,21 @@
   <!-- ===== About ===== -->
   <section class="section" id="about">
     <div class="section__inner">
-      <span class="section__label">About</span>
-      <h2 class="section__heading">事業内容</h2>
+      <span class="section__label js-reveal">About</span>
+      <h2 class="section__heading js-reveal">事業内容</h2>
 
       <div class="about-grid">
-        <div class="about-card">
+        <div class="about-card js-reveal">
           <span class="about-card__num">01</span>
           <h3 class="about-card__title">Import & Export</h3>
           <p class="about-card__text">国内外のサプライヤー・バイヤーをつなぎ、<br>輸出入に関わる一連の業務をサポートします。</p>
         </div>
-        <div class="about-card">
+        <div class="about-card js-reveal">
           <span class="about-card__num">02</span>
           <h3 class="about-card__title">Global Sourcing</h3>
           <p class="about-card__text">世界各国のネットワークを活かし、<br>最適な調達先の選定・交渉を行います。</p>
         </div>
-        <div class="about-card">
+        <div class="about-card js-reveal">
           <span class="about-card__num">03</span>
           <h3 class="about-card__title">Trade Consulting</h3>
           <p class="about-card__text">貿易実務・通関・物流の課題に対し、<br>専門的な知見でソリューションを提供します。</p>
@@ -67,10 +78,10 @@
   <!-- ===== Company ===== -->
   <section class="section section--dark" id="company">
     <div class="section__inner">
-      <span class="section__label">Company</span>
-      <h2 class="section__heading">会社概要</h2>
+      <span class="section__label js-reveal">Company</span>
+      <h2 class="section__heading js-reveal">会社概要</h2>
 
-      <table class="info-table">
+      <table class="info-table js-reveal">
         <tbody>
           <tr>
             <th>会社名</th>
@@ -82,11 +93,7 @@
           </tr>
           <tr>
             <th>所在地</th>
-            <td>—</td>
-          </tr>
-          <tr>
-            <th>電話番号</th>
-            <td>—</td>
+            <td>福岡県久留米市北野町十郎丸2278番地12</td>
           </tr>
         </tbody>
       </table>
@@ -96,23 +103,74 @@
   <!-- ===== Contact ===== -->
   <section class="section" id="contact">
     <div class="section__inner section__inner--narrow">
-      <span class="section__label">Contact</span>
-      <h2 class="section__heading">お問い合わせ</h2>
-      <p class="contact-lead">事業に関するご相談・お問い合わせは、<br>下記メールアドレスまでご連絡ください。</p>
-      <a href="mailto:info@md-luna.com" class="contact-email">info@md-luna.com</a>
+      <span class="section__label js-reveal">Contact</span>
+      <h2 class="section__heading js-reveal">お問い合わせ</h2>
+      <p class="contact-lead js-reveal">事業に関するご相談・お問い合わせは、<br>下記フォームよりご連絡ください。</p>
+
+      <form class="contact-form js-reveal" action="https://formspree.io/f/xqewqoyg" method="POST">
+        <div class="contact-form__group">
+          <label class="contact-form__label" for="name">お名前 <span class="contact-form__required">*</span></label>
+          <input class="contact-form__input" type="text" id="name" name="name" required autocomplete="name">
+        </div>
+        <div class="contact-form__group">
+          <label class="contact-form__label" for="company">会社名</label>
+          <input class="contact-form__input" type="text" id="company" name="company" autocomplete="organization">
+        </div>
+        <div class="contact-form__group">
+          <label class="contact-form__label" for="email">メールアドレス <span class="contact-form__required">*</span></label>
+          <input class="contact-form__input" type="email" id="email" name="email" required autocomplete="email">
+        </div>
+        <div class="contact-form__group">
+          <label class="contact-form__label" for="message">メッセージ <span class="contact-form__required">*</span></label>
+          <textarea class="contact-form__textarea" id="message" name="message" rows="6" required></textarea>
+        </div>
+        <button class="contact-form__submit" type="submit">送信する</button>
+      </form>
+
+      <p class="contact-note js-reveal">お急ぎの方は <a href="mailto:info@md-luna.com">info@md-luna.com</a> まで直接ご連絡ください。</p>
     </div>
   </section>
 
   <!-- ===== Footer ===== -->
   <footer class="footer">
     <div class="footer__inner">
-      <p class="footer__logo">Maison de Luna</p>
+      <p class="footer__logo">
+        <img src="assets/logo.png" alt="Maison de Luna" class="footer__logo-image">
+        Maison de Luna
+      </p>
+      <span class="footer__separator" aria-hidden="true"></span>
       <nav class="footer__nav">
         <a href="/privacy.html">Privacy Policy</a>
       </nav>
       <p class="footer__copy">&copy; 2026 Maison de Luna Ltd. All Rights Reserved.</p>
     </div>
   </footer>
+
+  <script>
+    // Scroll reveal — IntersectionObserver
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.js-reveal').forEach(el => observer.observe(el));
+
+    // Header scroll state
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          document.querySelector('.header').classList.toggle('header--scrolled', window.scrollY > 10);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+  </script>
 
 </body>
 </html>
