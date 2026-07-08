@@ -109,11 +109,9 @@ img {
   width: auto;
 }
 
-.header__logo-text {
-  font-family: var(--font-serif);
-  font-size: 1.25rem;
-  font-weight: 400;
-  letter-spacing: 0.12em;
+.header__logo-name {
+  height: 18px;
+  width: auto;
 }
 
 .header__nav {
@@ -123,9 +121,10 @@ img {
 
 .header__nav a {
   position: relative;
-  font-size: 0.8125rem;
-  font-weight: 400;
-  letter-spacing: 0.1em;
+  font-family: var(--font-serif);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--color-text-muted);
   transition: color 0.3s var(--ease-luxury);
@@ -215,10 +214,10 @@ img {
 }
 
 .hero__sub {
-  font-family: var(--font-sans);
-  font-size: 0.75rem;
-  font-weight: 400;
-  letter-spacing: 0.35em;
+  font-family: var(--font-serif);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.32em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.45);
   margin-bottom: 28px;
@@ -245,6 +244,16 @@ img {
   line-height: 1.2;
   margin-bottom: 24px;
   animation: heroFadeUp 1.2s var(--ease-luxury) 0.6s both;
+}
+
+/* KV ワードマーク（logo_name.svg）。内部塗り(near-black)を純白へ反転して動画上で表示 */
+.hero__title-logo {
+  display: block;
+  width: min(520px, 74vw);
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  filter: brightness(0) invert(1);
 }
 
 .hero__lead {
@@ -315,9 +324,9 @@ img {
   display: inline-flex;
   align-items: center;
   gap: 16px;
-  font-family: var(--font-sans);
-  font-size: 0.6875rem;
-  font-weight: 400;
+  font-family: var(--font-serif);
+  font-size: 0.8125rem;
+  font-weight: 500;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--color-text-light);
@@ -581,6 +590,38 @@ img {
   opacity: 0.5;
 }
 
+/* --- Footer Social --- */
+.footer__social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  margin-bottom: 32px;
+}
+
+.footer__social a {
+  display: inline-flex;
+  color: rgba(255, 255, 255, 0.55);
+  transition: color 0.3s var(--ease-luxury);
+}
+
+.footer__social a:hover {
+  color: var(--color-accent);
+}
+
+.footer__social a:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+.footer__social-icon {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+  display: block;
+}
+
 .footer__nav {
   margin-bottom: 32px;
 }
@@ -678,16 +719,23 @@ img {
   }
 
   .header__nav a {
-    font-size: 0.75rem;
+    font-size: 0.8125rem;
+    letter-spacing: 0.1em;
   }
 
-  .header__logo-text {
-    font-size: 0.85rem;
-    line-height: 1.2;
+  /* モバイルはヘッダー幅が狭く、長いワードマーク＋ナビが収まらないため
+     ヘッダーは月マーク(logo.png)のみ表示。ワードマークはヒーローで大きく見せる */
+  .header__logo-name {
+    display: none;
   }
 
   .hero {
     min-height: 85vh;
+  }
+
+  .hero__sub {
+    font-size: 0.625rem;
+    letter-spacing: 0.08em;
   }
 
   .hero__ornament {
