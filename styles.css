@@ -122,10 +122,9 @@ img {
 .header__nav a {
   position: relative;
   font-family: var(--font-serif);
-  font-size: 0.9375rem;
+  font-size: 1rem;
   font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  letter-spacing: 0.05em;
   color: var(--color-text-muted);
   transition: color 0.3s var(--ease-luxury);
 }
@@ -581,6 +580,13 @@ img {
   filter: invert(1);
 }
 
+/* フッターのワードマーク（logo_name.svg）。暗色背景のため near-black 塗りを純白へ反転（KVと同処理） */
+.footer__logo-name {
+  height: 18px;
+  width: auto;
+  filter: brightness(0) invert(1);
+}
+
 .footer__separator {
   display: block;
   width: 60px;
@@ -719,8 +725,8 @@ img {
   }
 
   .header__nav a {
-    font-size: 0.8125rem;
-    letter-spacing: 0.1em;
+    font-size: 0.875rem;
+    letter-spacing: 0.04em;
   }
 
   /* モバイルはヘッダー幅が狭く、長いワードマーク＋ナビが収まらないため
