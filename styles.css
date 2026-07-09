@@ -351,10 +351,8 @@ img {
 /* --- About Grid --- */
 .about-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 32px;
-  max-width: 680px;
-  margin: 0 auto;
 }
 
 .about-card {
@@ -709,6 +707,7 @@ img {
 
 /* Stagger delays for about cards */
 .about-card.js-reveal:nth-child(2) { transition-delay: 0.15s; }
+.about-card.js-reveal:nth-child(3) { transition-delay: 0.3s; }
 
 /* --- Responsive --- */
 @media (max-width: 768px) {
